@@ -83,3 +83,11 @@
     - /usr/share/tomcat/webapps/manager/META-INF/context.xml
   notify: restart tomcat
 
+tasks:
+    - name: copy src.txt as dest.txt in the same dir 
+      copy:
+        src: /dist/*.war
+        dest: /usr/local/tomcat/webapps/
+      tags:
+        - simple_copy
+
